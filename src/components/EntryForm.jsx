@@ -26,7 +26,7 @@ export default function EntryForm(props){
 			<label htmlFor="entryContent">Content:</label>
 			<input type="text" name="entryContent" className="entryContent" value={localContent} onChange={(event) => setLocalContent(event.target.value) }      />
 
-			<button onClick={() => props.addEntry(localTitle, localAuthor, localContent)}>
+			<button onClick={() => props.addEntry(localTitle, localAuthor, localContent, Date.now(), props.entryData.id)}>
 				Submit entry
 			</button>
 		</div>
