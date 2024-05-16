@@ -32,8 +32,8 @@ function App() {
 
       <EntryForm entryData={{}} addEntry={addEntryToJournal} /> 
 
-      {journalEntries.map(entry => {
-        return <EntryParent entryData={entry} addEntry={addEntryToJournal} />
+      {journalEntries.map((entry, index) => {
+        return <EntryParent key={index} entryData={entry} addEntry={addEntryToJournal} />
       })}
     </div>
   );
