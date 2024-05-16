@@ -10,9 +10,9 @@ import { useState } from "react"
 
 export default function EntryForm(props){
 
-	let [localTitle, setLocalTitle] = useState(props.entryData.title);
-	let [localAuthor, setLocalAuthor] = useState(props.entryData.author);
-	let [localContent, setLocalContent] = useState(props.entryData.content);
+	let [localTitle, setLocalTitle] = useState((props.entryData && props.entryData.title) || "Default Title");
+	let [localAuthor, setLocalAuthor] = useState(props.entryData ? props.entryData.author : "Default Author");
+	let [localContent, setLocalContent] = useState(props.entryData?.content || "Hello world! Write a journal entry!");
 	// may do date later!
 
 	return(
@@ -25,6 +25,10 @@ export default function EntryForm(props){
 
 			<label htmlFor="entryContent">Content:</label>
 			<input type="text" name="entryContent" class="entryContent" value={localContent} onChange={(event) => setLocalContent(event.target.value) }      />
+
+			<button onClick={() => props.addEntry(localTitle, localAuthor, localContent)}>
+				Submit entry
+			</button>
 		</div>
 	)
 }
