@@ -9,7 +9,7 @@ export function HomePage(){
 	return (
 		<div>
 			{journalEntries?.map((entry, index) => {
-				return <EntryParent key={index} postId={entry.id}  />
+				return <EntryParent key={index} id={entry.id}  />
 			})}
 		</div>
 	)
