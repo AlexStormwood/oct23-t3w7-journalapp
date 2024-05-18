@@ -8,7 +8,7 @@ export default function EntryParent(props){
 
 	return(
 		<section>
-			{editMode ? <EntryForm entryData={props.entryData} addEntry={props.addEntry} /> : <Entry entryData={props.entryData} /> }
+			{editMode ? <EntryForm entryData={props.entryData} /> : <Entry entryData={props.entryData} /> }
 
 			<button onClick={() => setEditMode(!editMode)}>Toggle Edit Mode</button>
 		</section>
