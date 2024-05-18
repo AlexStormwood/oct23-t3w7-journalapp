@@ -18,3 +18,4 @@
 		- /create 		-- form to create a new journal entry, needs to pass it up to parent component though 
 		- /view/:id 	-- view individual journal entry
 		- /edit/:id 	-- do we wanna do this or do another "edit in place" thing? 
+		- /latest -- get latest post in journalEntries and show that (get latest post in journalEntries and redirects to /view/:id )
