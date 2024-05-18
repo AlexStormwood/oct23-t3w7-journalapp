@@ -13,12 +13,15 @@ export default function EntryParent(props){
 
 
 	useEffect(() => {
-		let foundEntry = journalEntries.find(entry => entry.id === props.id);
+		let foundEntry = journalEntries.find(entry => entry.id === parseInt(props.id));
+		if (foundEntry){
+			setJournalEntry(foundEntry);
+			setEditMode(false);
+		}
 
-		setJournalEntry(foundEntry);
-
+	// Easy fix to the edit-in-place live updates ;)
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	},[]);
+	},[journalEntries]);
 
 	return(
 		<section>

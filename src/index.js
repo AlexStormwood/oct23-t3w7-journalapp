@@ -7,6 +7,7 @@ import { BlogProvider } from './contexts/BlogContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Template } from './pages/_template';
 import { HomePage } from './pages/HomePage';
+import { EntryViewPage } from './pages/EntryViewPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,7 +22,7 @@ root.render(
             {/* Shows ALL posts as read-only */}
             <Route index element={<HomePage />} />
             {/* Show individual post with edit toggle */}
-            {/* <Route path='/view/:id' element={<EntryPage />} /> */}
+            <Route path='/view/:id' element={<EntryViewPage />} />
             {/* Show a form to make a new post  */}
             {/* <Route path='/create' element={<NewEntryPage />} /> */}
           </Route>
